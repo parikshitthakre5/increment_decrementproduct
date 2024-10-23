@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Increment/Decrement</title>
+    <link rel="icon" type="image/png" href="./images/mobile-phone.png" />
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+  </head>
+  <style>
+    .procont {
+      width: 200px;
+      border: 2px solid black;
+    }
+    .img {
+      width: 150px;
+      display: block;
+      margin: 20px auto;
+      border-radius: 15px;
+    }
+    .qtyhead {
+      text-align: center;
+    }
+    .innercont {
+      display: flex;
+      justify-content: center;
+    }
+    .btnicon {
+      height: 20px;
+      margin: 0px 10px;
+      cursor: pointer;
+    }
+    .btnprimary {
+      display: block;
+      margin: 10px auto;
+      cursor: pointer;
+      background-color: black;
+      border: none;
+      color: white;
+      padding: 5px 10px;
+    }
+  </style>
+  <body>
+    <div class="procont">
+      <img
+        src="./images/elegant-smartphone-composition.jpg"
+        alt="samsungimg"
+        class="img"
+      />
+      <p class="qtyhead">Price:₹500</p>
+      <div class="innercont">
+        <img
+          src="./images/subtract.png"
+          alt="subtracticon"
+          class="btnicon"
+          onclick="subtract()"
+        />
+
+        <span id="qtyaddsub">1</span>
+        <img
+          src="./images/add.png"
+          alt="addicon"
+          class="btnicon"
+          onclick="add()"
+        />
+      </div>
+      <button class="btnprimary">Buy now</button>
+    </div>
+
+    <script>
+      const outputelement = document.getElementById("qtyaddsub");
+
+      function add() {
+        let quantity = parseInt(outputelement.innerText);
+        outputelement.innerText = ++quantity;
+      }
+
+      function subtract() {
+        let quantity = parseInt(outputelement.innerText);
+        if ( quantity > 0) {
+          outputelement.innerText = --quantity;
+        }
+      }
+    </script>
+  </body>
+</html>
